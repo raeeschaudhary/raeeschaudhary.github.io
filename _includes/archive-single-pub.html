@@ -17,7 +17,7 @@
     </h2>
         {% if post.collection == 'publications' %}
           <p>In <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-          <p>Recommended citation: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
+          <p>Cite: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
         {% endif %}
   </article>
 </div>
