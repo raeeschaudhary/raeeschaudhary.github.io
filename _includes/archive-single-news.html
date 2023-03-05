@@ -1,9 +1,5 @@
 {% include base_path %}
 
-<p>Published in <i>{{ post.venue }}</i>, {{ post.date }} </p>
-
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date }} </p>
-  </article>
-</div>
+<p>{{ post.date }} - <i>{{ post.title }}</i> </p>
+<p>{{ post.excerpt }} - <i>{{ post.title }}</i> </p>
+<p>{{ post.details }} </p>
