@@ -1,5 +1,4 @@
 {% include base_path %}
 
-<p>{{ post.date }} - <i>{{ post.title }}</i> </p>
-<p>{{ post.excerpt }} - <i>{{ post.title }}</i> </p>
+<p>{{ post.date | date: "%-d %B %Y" }} - {{ post.title }}. {{ post.excerpt }} - <i>{{ post.venue }}</i> </p>
 <p>{{ post.details }} </p>
