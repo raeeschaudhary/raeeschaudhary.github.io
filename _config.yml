@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Muhammad Raees"
 title_separator          : "-"
 name                     : &name "Muhammad Raees"
-description              : &description "Official Personal Website"
+description              : &description "Personal Website"
 url                      : https://raeeschaudhary.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "raeeschaudhary/raeeschaudhary.github.io"
@@ -85,36 +85,17 @@ author:
   bio              : "Ph.D. Researcher at RIT, Rochester"
   location         : "New York, USA"
   employer         :
-  pubmed           : 
   googlescholar    : "46ck0d4AAAAJ"
   email            : "mr2714@rit.edu"
-  researchgate     :  "https://www.researchgate.net/profile/Muhammad-Raees" # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  "https://www.researchgate.net/profile/Muhammad-Raees"
   uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
   facebook         :
-  foursquare       :
   github           : "raeeschaudhary"
-  google_plus      :
-  keybase          :
   instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
   linkedin         : "https://www.linkedin.com/in/muhammad-raees-chdry/"
   orcid            : "http://orcid.org/0000-0002-1581-0378"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
   twitter          :
-  vine             :
-  weibo            :
-  xing             :
   youtube          :
-  wikipedia        :
 
 
 # Reading Files

@@ -6,6 +6,11 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.collection == 'publications' %}
+<p> {{ post.type }} - {{ title }} in <i> {{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+<p>Cite: {{ post.citation }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
+{% endif %}
+
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     <h2 class="archive__item-title" itemprop="headline">
