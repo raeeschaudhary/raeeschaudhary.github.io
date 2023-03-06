@@ -23,7 +23,7 @@
 
 
 {% if post.collection == 'publications' %}
-<p> {{ post.type }} - {{ post.citation }}, {{ post.date | default: "1900-01-01" | date: "%Y" }} <a href="{{ post.paperurl }}"><u>{{ post.paperurl }}</u></a></p>
+<p> {{ post.type }} - {{ post.citation }}, {{ post.date | default: "1900-01-01" | date: "%Y" }} <button><a href="{{ post.paperurl }}">Read</a></button></p>
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
