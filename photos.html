@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48487621-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-48487621-4');
+  </script>
+
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Muhammad Raees</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style type="text/css">
+    .slider_buttons {
+  position: relative;
+  display: block;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 900px; /* Maximum width */
+  height: 500px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0 auto; /* Center the slider */
+}
+
+.slider_buttons:before,
+.slider_buttons:after {
+  content: '⥪';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  background: dodgerblue;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.slider_buttons:after {
+  content: '⥭';
+  left: auto;
+  right: 1rem;
+}
+
+/* Input styles */
+input {
+  appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform: translateX(100%);
+  transition: transform ease-in-out 400ms;
+  z-index: 1;
+}
+
+/* Input focus */
+input:focus {
+  outline: none;
+}
+
+/* Input label */
+input:after {
+  content: attr(title);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Unchecked input */
+input:not(:checked):before {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  top: 50%;
+  left: calc(-100% + 1rem);
+}
+
+/* Checked input */
+input:checked:before {
+  display: none;
+  left: 1rem;
+}
+
+/* Checked input styles */
+input:checked {
+  transform: translateX(0);
+  pointer-event: none;
+  z-index: 0;
+  box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+}
+
+/* Checked input label */
+input:checked:after {
+  left: 1rem; /* Adjusted for checked input */
+}
+
+/* Checked input before */
+input:checked + input:before {
+  left: -3rem;
+}
+
+/* Hide previous unchecked inputs */
+input:checked + input ~ input:before {
+  display: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .slider_buttons {
+    height: 300px; /* Adjusted height for smaller screens */
+  }
+}
+
+  </style>
+  <!-- =======================================================
+  * Template Name: iPortfolio - v1.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Muhammad Raees</a></h1>
+        <div class="social-links mt-3 text-center">
+          <!-- <a href="https://twitter.com/ytlity" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+          <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+          <a target="_blank" href="https://scholar.google.com/citations?user=46ck0d4AAAAJ&hl=en" class="google"><i class="bx bxl-google"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/muhammad-raees-b6289954" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a target="_blank" href="https://github.com/raeeschaudhary" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:mr2714@rit.edu" class="email"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Photos over the years</h2>
+        </div>
+        <div class="content">
+
+          
+
+
+          <i class="slider_buttons">
+            <input checked type="radio" name="s" style="background-image: url('assets/pastphotos/p2.jpg');" title="RIT 2023">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p3.jpg');" title="Letchworth NY 2023">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p4.jpg');" title="Rochester NY 2023">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p1.jpg');" title="Niagra Falls NY 2023">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p5.jpg');" title="Mirpur PK 2020">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p6.jpg');" title="Muzzafarabad PK 2021">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p7.jpg');" title="RTS NY 2022">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p8.jpg');" title="Jhelum PK 2019">
+            <input type="radio" name="s" style="background-image: url('assets/pastphotos/p10.jpg');" title="Rochester NY 2022">
+        </i>
+
+
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+        
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" hidden>
+    <div class="container">
+     <!--  <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div> -->
+      <!-- <div class="credits"> -->
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      <!-- </div> -->
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
