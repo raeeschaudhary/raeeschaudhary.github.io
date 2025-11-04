@@ -38,6 +38,23 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <style>
+    /* Make the p5 canvas cover the <main> section */
+    #wave-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none; /* allows clicking through the canvas */
+    }
+
+
+  </style>
+
 </head>
 
 <body>
@@ -110,9 +127,10 @@
     </section>
     <!-- End Top Section -->
 
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
+      <div id="wave-overlay"></div>
+
       <div class="container">
 
         <div class="section-title">
@@ -143,6 +161,42 @@
       </div>
     </section>
     <!-- End About Section -->
+
+    <!-- p5.js sketch -->
+<script>
+    new p5(function(p) {
+      let t = 0;
+      const d = 250;
+
+      p.setup = function() {
+        // Create canvas inside the overlay div
+        const canvasParent = document.getElementById('wave-overlay');
+        const canvas = p.createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+        canvas.parent(canvasParent);
+        p.stroke(p.color('#ffffff'), 120); // white wave for contrast
+        p.noFill();
+        p.frameRate(30);
+      }
+
+      p.draw = function() {
+        p.clear(); // transparent background so you can see the section below
+        p.beginShape();
+        for (let i = -1; i <= d; i++) {
+          const x = p.map(i, 0, d, 0, p.width);
+          const y = p.map(p.noise(i * 0.01, t * 0.005), 0, 1, 0, p.height)
+                    + p.map(i, 0, d, -p.height/4, p.height/2);
+          p.curveVertex(x, y);
+        }
+        p.endShape(p.OPEN);
+        t += 1;
+      }
+
+      p.windowResized = function() {
+        const canvasParent = document.getElementById('wave-overlay');
+        p.resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+      }
+    });
+  </script>
 
     <!-- ======= pubs Section ======= -->
     <section id="pubs" class="pubs">
@@ -426,6 +480,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 
