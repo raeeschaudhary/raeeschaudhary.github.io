@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48487621-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-48487621-3');
+</script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Customer Analytics for Business Users | Muhammad Raees</title>
+  <meta name="description" content="A research-led case study on making customer segmentation interpretable and useful for B2B sales professionals.">
+  <meta name="keywords" content="customer analytics, interactive machine learning, customer segmentation, RFM, B2B sales">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    #main.allocation-case {
+      background: #f7f6f2;
+      color: #242d2b;
+      min-height: 100vh;
+    }
+
+    .allocation-case .case-shell {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 38px clamp(28px, 6vw, 92px) 100px;
+    }
+
+    .allocation-case .case-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #45635c;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .case-back:hover {
+      color: #a64e35;
+    }
+
+    .allocation-case .case-intro {
+      max-width: 940px;
+      padding: clamp(58px, 9vw, 116px) 0 42px;
+    }
+
+    .allocation-case .eyebrow {
+      margin: 0 0 20px;
+      color: #a64e35;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case h1,
+    .allocation-case h2,
+    .allocation-case h3 {
+      color: #242d2b;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .allocation-case .case-intro h1 {
+      max-width: 900px;
+      margin: 0 0 24px;
+      font-size: clamp(42px, 6.3vw, 82px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.04;
+    }
+
+    .allocation-case .case-lede {
+      max-width: 710px;
+      margin: 0;
+      color: #5b6561;
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.75;
+    }
+
+    .allocation-case .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 14px 0 42px;
+      padding: 23px 0;
+      border-top: 1px solid #d8d9d3;
+      border-bottom: 1px solid #d8d9d3;
+    }
+
+    .allocation-case .case-meta span {
+      display: block;
+      color: #7a817d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .case-meta strong {
+      display: block;
+      margin-top: 8px;
+      color: #28332f;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .allocation-case figure {
+      margin: 0;
+    }
+
+    .allocation-case .case-image {
+      overflow: hidden;
+      border-radius: 5px;
+      background: #e8ecea;
+    }
+
+    .allocation-case .case-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .allocation-case figcaption {
+      margin-top: 12px;
+      color: #747d79;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .allocation-case .case-section {
+      padding: clamp(68px, 9vw, 118px) 0 0;
+    }
+
+    .allocation-case .section-heading {
+      display: grid;
+      grid-template-columns: minmax(190px, .75fr) 1.5fr;
+      gap: 42px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .allocation-case .section-number {
+      margin: 8px 0 0;
+      color: #a64e35;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .section-heading h2 {
+      max-width: 730px;
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.14;
+    }
+
+    .allocation-case .section-copy {
+      display: grid;
+      grid-template-columns: minmax(190px, .75fr) 1.5fr;
+      gap: 42px;
+    }
+
+    .allocation-case .section-copy p {
+      max-width: 730px;
+      margin: 0 0 18px;
+      color: #5b6561;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .allocation-case .section-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .allocation-case .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      background: #d8d9d3;
+      border: 1px solid #d8d9d3;
+    }
+
+    .allocation-case .feature {
+      min-height: 180px;
+      padding: 27px 25px;
+      background: #f7f6f2;
+    }
+
+    .allocation-case .feature h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .allocation-case .feature p {
+      margin: 0;
+      color: #68716d;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .allocation-case .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(30px, 6vw, 82px);
+      align-items: center;
+    }
+
+    .allocation-case .split-layout .section-heading {
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .allocation-case .split-layout .section-number {
+      margin-bottom: 19px;
+    }
+
+    .allocation-case .split-layout .section-copy {
+      display: block;
+    }
+
+    .allocation-case .image-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .allocation-case .image-pair figure:first-child {
+      margin-top: 48px;
+    }
+
+    .allocation-case .outcome-band {
+      margin-top: clamp(70px, 9vw, 116px);
+      padding: clamp(32px, 5vw, 64px);
+      background: #263b35;
+      color: #fff;
+    }
+
+    .allocation-case .outcome-band .eyebrow {
+      color: #e6a184;
+    }
+
+    .allocation-case .outcome-band h2 {
+      max-width: 770px;
+      margin: 0 0 20px;
+      color: #fff;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    .allocation-case .outcome-band p {
+      max-width: 730px;
+      margin: 0;
+      color: #d6dfdb;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .allocation-case .case-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+      padding-top: 22px;
+      border-top: 1px solid #d8d9d3;
+      color: #747d79;
+      font-size: 13px;
+    }
+
+    .allocation-case .case-footer a {
+      color: #45635c;
+      font-weight: 600;
+    }
+
+    .allocation-case .project-question {
+      margin-top: 20px;
+      padding: 28px 32px;
+      border-left: 3px solid #a64e35;
+      background: #eeece5;
+    }
+
+    .allocation-case .project-question span {
+      display: block;
+      margin-bottom: 10px;
+      color: #a64e35;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .project-question p {
+      max-width: 900px;
+      margin: 0;
+      color: #28332f;
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(20px, 2.4vw, 29px);
+      line-height: 1.45;
+    }
+
+    .allocation-case .question-grid,
+    .allocation-case .rfm-grid,
+    .allocation-case .tech-grid,
+    .allocation-case .study-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .allocation-case .question-card {
+      padding: 20px 22px;
+      border: 1px solid #d8d9d3;
+      color: #53605a;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .allocation-case .question-card span {
+      display: block;
+      margin-bottom: 9px;
+      color: #a64e35;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .allocation-case .insight-callout {
+      margin-top: 40px;
+      padding: 30px;
+      background: #263b35;
+      color: #fff;
+    }
+
+    .allocation-case .insight-callout span {
+      display: block;
+      margin-bottom: 12px;
+      color: #e6a184;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .insight-callout p {
+      max-width: 900px;
+      margin: 0;
+      color: #fff;
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      line-height: 1.45;
+    }
+
+    .allocation-case .rfm-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .allocation-case .rfm-card {
+      padding: 24px;
+      border-top: 2px solid #a64e35;
+      background: #eeece5;
+    }
+
+    .allocation-case .rfm-card strong {
+      display: block;
+      margin-bottom: 13px;
+      color: #28332f;
+      font-family: "Raleway", sans-serif;
+      font-size: 25px;
+    }
+
+    .allocation-case .rfm-card p {
+      margin: 0;
+      color: #68716d;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .allocation-case .model-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .allocation-case .flow-step {
+      position: relative;
+      min-height: 125px;
+      padding: 20px 18px;
+      border: 1px solid #d8d9d3;
+      background: #fff;
+    }
+
+    .allocation-case .flow-step span {
+      display: block;
+      margin-bottom: 11px;
+      color: #a64e35;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .allocation-case .flow-step strong {
+      color: #28332f;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .allocation-case .flow-caption {
+      margin: 12px 0 0;
+      color: #747d79;
+      font-size: 12px;
+    }
+
+    .allocation-case .tech-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .allocation-case .tech-item {
+      padding: 20px;
+      border: 1px solid #d8d9d3;
+    }
+
+    .allocation-case .tech-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #28332f;
+      font-size: 15px;
+    }
+
+    .allocation-case .tech-item p {
+      margin: 0;
+      color: #68716d;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .allocation-case .study-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: #d8d9d3;
+      border: 1px solid #d8d9d3;
+    }
+
+    .allocation-case .study-stat {
+      padding: 28px;
+      background: #eeece5;
+    }
+
+    .allocation-case .study-stat strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #a64e35;
+      font-family: "Raleway", sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
+
+    .allocation-case .study-stat span {
+      color: #53605a;
+      font-size: 14px;
+    }
+
+    .allocation-case .closing-copy {
+      margin-top: 32px;
+    }
+
+    @media (max-width: 767px) {
+      .allocation-case .case-shell {
+        padding: 76px 22px 64px;
+      }
+
+      .allocation-case .case-intro {
+        padding-top: 62px;
+      }
+
+      .allocation-case .case-meta,
+      .allocation-case .section-heading,
+      .allocation-case .section-copy,
+      .allocation-case .feature-grid,
+      .allocation-case .split-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .allocation-case .case-meta {
+        gap: 18px;
+      }
+
+      .allocation-case .section-heading,
+      .allocation-case .section-copy {
+        gap: 18px;
+      }
+
+      .allocation-case .feature {
+        min-height: auto;
+      }
+
+      .allocation-case .image-pair {
+        gap: 12px;
+      }
+
+      .allocation-case .image-pair figure:first-child {
+        margin-top: 24px;
+      }
+
+      .allocation-case .question-grid,
+      .allocation-case .rfm-grid,
+      .allocation-case .tech-grid,
+      .allocation-case .study-stats,
+      .allocation-case .model-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .allocation-case .project-question,
+      .allocation-case .insight-callout {
+        padding: 24px;
+      }
+
+      .allocation-case .case-footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v1.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Muhammad Raees</a></h1>
+        <div class="social-links mt-3 text-center">
+          <!-- <a href="https://twitter.com/ytlity" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+          <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+          <a target="_blank" href="https://scholar.google.com/citations?user=46ck0d4AAAAJ&hl=en" class="google"><i class="bx bxl-google"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/muhammad-raees-b6289954" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a target="_blank" href="https://github.com/raeeschaudhary" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:mr2714@rit.edu" class="email"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" class="allocation-case">
+    <div class="case-shell">
+      <header class="case-intro">
+        <p class="eyebrow">Research · Interactive machine learning · B2B sales</p>
+        <h1>Customer analytics for business users.</h1>
+        <p class="case-lede">Designing interactive machine learning experiences that help sales professionals understand customer segments, bring their domain knowledge into the analysis, and make informed business decisions.</p>
+      </header>
+
+      <div class="case-meta" aria-label="Project overview">
+        <div><span>Domain</span><strong>B2B customer analytics</strong></div>
+        <div><span>Exploration</span><strong>Interactive segmentation prototype</strong></div>
+        <div><span>Methods</span><strong>Interviews, prototype feedback, survey</strong></div>
+      </div>
+
+      <figure>
+        <div class="case-image">
+          <img src="assets/img/portfolio/p4_1.png" alt="Customer segmentation prototype with a 3D cluster visualization and controls to inspect, explain, and relabel customer groups.">
+        </div>
+        <figcaption>Interactive cluster exploration pairs a 3D view of customer groups with tools to inspect, explain, and relabel classifications.</figcaption>
+      </figure>
+
+      <aside class="project-question" aria-label="Guiding design question">
+        <span>The guiding question</span>
+        <p>How might we make customer analytics accessible and useful without asking business users to become data scientists?</p>
+      </aside>
+
+      <section class="case-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="section-number">01 / The challenge</p>
+          <h2 id="challenge-title">Customer data is valuable. Turning it into action is harder.</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <div>
+            <p>Sales professionals know their customers, histories, and market conditions. A model may reveal patterns they have not seen, but users still need to understand those groupings and decide how they apply to the business.</p>
+            <p><strong>The design challenge:</strong> connect machine-generated patterns with the contextual knowledge people already use to make decisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="people-title">
+        <div class="section-heading">
+          <p class="section-number">02 / Start with people</p>
+          <h2 id="people-title">How sales professionals make sense of customers.</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <p>I spoke with experienced sales managers about their current analysis practices, expectations, and pain points. The goal was to understand how customer information becomes a business judgment before deciding what an automated tool should do.</p>
+        </div>
+
+        <div class="question-grid" aria-label="Research questions">
+          <div class="question-card"><span>01</span>How do sales professionals organize customers and assess their value?</div>
+          <div class="question-card"><span>02</span>Which purchasing, relationship, and market signals shape that assessment?</div>
+          <div class="question-card"><span>03</span>How do people interpret differences between customer groups?</div>
+          <div class="question-card"><span>04</span>When do model classifications conflict with domain knowledge, and what control do users expect?</div>
+        </div>
+
+        <div class="insight-callout">
+          <span>Research insight</span>
+          <p>Segmentation is not just a statistical exercise. People interpret customer groups through experience, relationships, and business context.</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="principles-title">
+        <div class="section-heading">
+          <p class="section-number">03 / Interaction principles</p>
+          <h2 id="principles-title">Explore—not just receive.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Make results interpretable</h3>
+            <p>Help users see what distinguishes customer groups and how the characteristics connect to purchasing behavior.</p>
+          </article>
+          <article class="feature">
+            <h3>Give users control</h3>
+            <p>Let sales professionals examine, question, and engage with classifications rather than passively accept them.</p>
+          </article>
+          <article class="feature">
+            <h3>Include business knowledge</h3>
+            <p>Recognize that important customer context is not always captured in transactional data or a model.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="prototype-title">
+        <div class="section-heading">
+          <p class="section-number">04 / From model to experience</p>
+          <h2 id="prototype-title">Customer segments and an interactive ML prototype.</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <div>
+            <p>I built a prototype using a realistic customer dataset from a global manufacturing company. Clustering techniques were used to identify groups based on purchasing behavior. The interface connected the analysis to interactive visual representations so business users could explore customer groups, inspect segment characteristics, and engage with model-generated classifications.</p>
+          </div>
+        </div>
+
+        <div class="model-flow" aria-label="Conceptual customer segmentation workflow">
+          <div class="flow-step"><span>01 / Input</span><strong>Customer purchasing data</strong></div>
+          <div class="flow-step"><span>02 / Represent</span><strong>Recency, frequency, monetary signals</strong></div>
+          <div class="flow-step"><span>03 / Analyze</span><strong>Clustering to identify patterns</strong></div>
+          <div class="flow-step"><span>04 / Explore</span><strong>Customer groups for business interpretation</strong></div>
+        </div>
+
+      </section>
+
+      <section class="case-section" aria-labelledby="feedback-title">
+        <div class="section-heading">
+          <p class="section-number">05 / Learn from interaction</p>
+          <h2 id="feedback-title">A model needs to make sense to its users.</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <div>
+            <p>Through interviews and user feedback, I explored how sales professionals interpreted customer segments, where they encountered friction, and what they expected from an interactive analytics tool.</p>
+            <p>The work challenged an early assumption: identifying meaningful groups is not, on its own, enough to support business decisions. Users wanted to examine the results, bring their customer knowledge to the process, and have meaningful control over segmentation.</p>
+          </div>
+        </div>
+
+        <div class="outcome-band" aria-label="Key learning">
+          <p class="eyebrow">Key takeaway</p>
+          <h2>Automation does not automatically create a better experience.</h2>
+          <p>Machine learning creates value when people can understand, contextualize, and meaningfully interact with its outputs—not only when a model can generate them.</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="adoption-title">
+        <div class="section-heading">
+          <p class="section-number">06 / Beyond the prototype</p>
+          <h2 id="adoption-title">Why do business users still rely on familiar tools?</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <p>The prototype work led to a broader question about analytics and AI adoption. I surveyed business professionals and followed up with interviews to understand how people use data, their experiences with analytical tools, and what gets in the way of adopting AI-based analytics.</p>
+        </div>
+
+        <div class="study-stats" aria-label="Study participants">
+          <div class="study-stat"><strong>65</strong><span>business professionals surveyed</span></div>
+          <div class="study-stat"><strong>18</strong><span>participants interviewed</span></div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Skill and interpretation gaps</h3>
+            <p>Complex statistical models and analytical tools can be difficult to understand without specialized expertise.</p>
+          </article>
+          <article class="feature">
+            <h3>Familiar workarounds</h3>
+            <p>Some professionals perform their own analysis with familiar tools or delegate analytical work to others.</p>
+          </article>
+          <article class="feature">
+            <h3>Design around real practices</h3>
+            <p>Adoption depends on how tools fit into existing work, decisions, and professional knowledge—not capability alone.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="contributions-title">
+        <div class="section-heading">
+          <p class="section-number">07 / Research outcomes</p>
+          <h2 id="contributions-title">Three connected perspectives on human-centered analytics.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Interactive machine learning</h3>
+            <p>Investigating the challenges of introducing interactive customer segmentation into real-world sales operations.</p>
+          </article>
+          <article class="feature">
+            <h3>B2B segmentation UX</h3>
+            <p>Examining usability and interaction challenges in customer segmentation tools for business professionals.</p>
+          </article>
+          <article class="feature">
+            <h3>AI analytics adoption</h3>
+            <p>Understanding why decision-makers continue to rely on traditional analytical practices despite new AI tools.</p>
+          </article>
+        </div>
+        <div class="section-copy closing-copy">
+          <div></div>
+          <p>Together, these studies point toward analytics systems that account for users' expertise, expectations, and decision-making practices—and treat human judgment as part of the analytical process.</p>
+        </div>
+      </section>
+
+      <footer class="case-footer">
+        <span>Customer Analytics · Interactive Machine Learning</span>
+        <a href="index.html#portfolio">Explore more projects <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+      </footer>
+    </div>
+  </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer" hidden>
+    <div class="container">
+     <!--  <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div> -->
+      <!-- <div class="credits"> -->
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      <!-- </div> -->
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -15,9 +15,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Muhammad Raees</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+  <title>Visual Analytics for Macroeconomic Intelligence | Muhammad Raees</title>
+  <meta name="description" content="Interactive visual analytics for Advance Macro Research, translating economic indicators, machine learning outputs, and central bank communications into decision-oriented views.">
+  <meta name="keywords" content="macroeconomic analytics, visual analytics, central bank, inflation risk, unemployment risk, monetary policy">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -36,6 +36,333 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    #main.macro-case {
+      min-height: 100vh;
+      background: #f7f6f2;
+      color: #242d2b;
+    }
+
+    .macro-case .case-shell {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 38px clamp(28px, 6vw, 92px) 100px;
+    }
+
+    .macro-case .case-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #45635c;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .macro-case .case-back:hover,
+    .macro-case .case-footer a:hover {
+      color: #a64e35;
+    }
+
+    .macro-case .case-intro {
+      max-width: 940px;
+      padding: clamp(58px, 9vw, 116px) 0 42px;
+    }
+
+    .macro-case .eyebrow,
+    .macro-case .section-number {
+      color: #a64e35;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .macro-case .eyebrow {
+      margin: 0 0 20px;
+    }
+
+    .macro-case h1,
+    .macro-case h2,
+    .macro-case h3 {
+      color: #242d2b;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .macro-case .case-intro h1 {
+      max-width: 900px;
+      margin: 0 0 24px;
+      font-size: clamp(42px, 6.3vw, 82px);
+      font-weight: 500;
+      letter-spacing: -.055em;
+      line-height: 1.04;
+    }
+
+    .macro-case .case-lede {
+      max-width: 740px;
+      margin: 0;
+      color: #5b6561;
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.75;
+    }
+
+    .macro-case .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 14px 0 42px;
+      padding: 23px 0;
+      border-top: 1px solid #d8d9d3;
+      border-bottom: 1px solid #d8d9d3;
+    }
+
+    .macro-case .case-meta span {
+      display: block;
+      color: #7a817d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .macro-case .case-meta strong {
+      display: block;
+      margin-top: 8px;
+      color: #28332f;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .macro-case figure {
+      margin: 0;
+    }
+
+    .macro-case .case-image {
+      overflow: hidden;
+      border-radius: 5px;
+      background: #e8ecea;
+    }
+
+    .macro-case .case-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .macro-case figcaption {
+      margin-top: 12px;
+      color: #747d79;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .macro-case .case-section {
+      padding: clamp(68px, 9vw, 118px) 0 0;
+    }
+
+    .macro-case .section-heading {
+      display: grid;
+      grid-template-columns: minmax(190px, .75fr) 1.5fr;
+      gap: 42px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .macro-case .section-number {
+      margin: 8px 0 0;
+    }
+
+    .macro-case .section-heading h2 {
+      max-width: 730px;
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.14;
+    }
+
+    .macro-case .section-copy {
+      display: grid;
+      grid-template-columns: minmax(190px, .75fr) 1.5fr;
+      gap: 42px;
+    }
+
+    .macro-case .section-copy p {
+      max-width: 730px;
+      margin: 0 0 18px;
+      color: #5b6561;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .macro-case .section-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .macro-case .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      border: 1px solid #d8d9d3;
+      background: #d8d9d3;
+    }
+
+    .macro-case .feature {
+      min-height: 180px;
+      padding: 27px 25px;
+      background: #f7f6f2;
+    }
+
+    .macro-case .feature h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .macro-case .feature p,
+    .macro-case .product-card p {
+      margin: 0;
+      color: #68716d;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .macro-case .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .macro-case .product-card {
+      overflow: hidden;
+      border: 1px solid #d8d9d3;
+      background: #fff;
+    }
+
+    .macro-case .product-card .case-image img,
+    .macro-case .horizon-visual {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .macro-case .product-card-content {
+      padding: 24px;
+    }
+
+    .macro-case .product-card .eyebrow {
+      margin-bottom: 10px;
+      font-size: 10px;
+    }
+
+    .macro-case .product-card h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .macro-case .horizon-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 3vw, 34px);
+      background: #e8ecea;
+    }
+
+    .macro-case .horizon-visual span {
+      display: flex;
+      width: 76px;
+      height: 76px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #aebdb6;
+      border-radius: 50%;
+      color: #45635c;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .macro-case .outcome-band {
+      margin-top: clamp(70px, 9vw, 116px);
+      padding: clamp(32px, 5vw, 64px);
+      background: #263b35;
+      color: #fff;
+    }
+
+    .macro-case .outcome-band .eyebrow {
+      color: #e6a184;
+    }
+
+    .macro-case .outcome-band h2 {
+      max-width: 770px;
+      margin: 0 0 20px;
+      color: #fff;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.15;
+    }
+
+    .macro-case .outcome-band p {
+      max-width: 730px;
+      margin: 0;
+      color: #d6dfdb;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .macro-case .case-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 50px;
+      padding-top: 22px;
+      border-top: 1px solid #d8d9d3;
+      color: #747d79;
+      font-size: 13px;
+    }
+
+    .macro-case .case-footer a {
+      color: #45635c;
+      font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+      .macro-case .case-shell {
+        padding: 76px 22px 64px;
+      }
+
+      .macro-case .case-intro {
+        padding-top: 62px;
+      }
+
+      .macro-case .case-meta,
+      .macro-case .section-heading,
+      .macro-case .section-copy,
+      .macro-case .feature-grid,
+      .macro-case .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .macro-case .case-meta,
+      .macro-case .section-heading,
+      .macro-case .section-copy {
+        gap: 18px;
+      }
+
+      .macro-case .feature {
+        min-height: auto;
+      }
+
+      .macro-case .case-footer {
+        flex-direction: column;
+      }
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: iPortfolio - v1.3.0
@@ -73,65 +400,131 @@
         </ul>
       </nav>
       <!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <main id="main" class="macro-case">
+    <div class="case-shell">
+      <header class="case-intro">
+        <p class="eyebrow">Project case study · Advance Macro Research</p>
+        <h1>Macroeconomic Analytics.</h1>
+        <p class="case-lede">Interactive visual analytics that turn complex economic signals into accessible, decision-oriented views for economists, policymakers, and financial professionals.</p>
+      </header>
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Portfolio Details</li>
-          </ol>
-        </div>
-
+      <div class="case-meta" aria-label="Project overview">
+        <div><span>Organization</span><strong>Advance Macro Research</strong></div>
+        <div><span>Focus</span><strong>Macroeconomic intelligence</strong></div>
+        <div><span>Contribution</span><strong>Design &amp; development</strong></div>
       </div>
-    </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+      <figure>
+        <div class="case-image">
+          <img src="assets/img/portfolio/p2_0.png" alt="Advance Macro Research dashboard linking central bank monitoring with hawk-dove, recession, inflation, and unemployment analytics.">
+        </div>
+        <figcaption>A connected suite of macroeconomic monitoring and analytics products.</figcaption>
+      </figure>
 
-        <div class="portfolio-details-container">
-
-          <div class="owl-carousel portfolio-details-carousel">
-            <img src="assets/img/portfolio/p2_1.png" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/p2_2.png" class="img-fluid" alt="">
-            <img src="assets/img/portfolio/p2_3.png" class="img-fluid" alt="">
+      <section class="case-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="section-number">01 / The challenge</p>
+          <h2 id="challenge-title">Turn complex economic signals into actionable insights.</h2>
+        </div>
+        <div class="section-copy">
+          <div></div>
+          <div>
+            <p>Macroeconomic analysis brings together a wide range of indicators, statistical models, and communications from central banks. Even when the underlying analysis is valuable, its results can be difficult to explore and interpret in a form that supports timely decisions.</p>
+            <p>I designed and developed visual analytics experiences that help users examine economic trends, monitor emerging risks, and interpret central bank behavior across different time horizons.</p>
           </div>
+        </div>
+      </section>
 
-          <div class="portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong>: Analytics Development</li>
-              <li><strong>Project</strong>: Advance Macro Analytics</li>
-              <!-- <li><strong>Project date</strong>: 01 March, 2020</li> -->
-              <!-- <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li> -->
-            </ul>
-          </div>
+      <section class="case-section" aria-labelledby="contributions-title">
+        <div class="section-heading">
+          <p class="section-number">02 / My contributions</p>
+          <h2 id="contributions-title">Make analytical depth easier to navigate and understand.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Translate analysis into visuals</h3>
+            <p>Turn model outputs and statistical results into interpretable visual representations.</p>
+          </article>
+          <article class="feature">
+            <h3>Surface trends and risk</h3>
+            <p>Communicate sentiment, indicators, and forward-looking risk across multiple time horizons.</p>
+          </article>
+          <article class="feature">
+            <h3>Support exploration</h3>
+            <p>Structure information to make it easier to explore, compare, and use in economic decision-making.</p>
+          </article>
+        </div>
+      </section>
 
+      <section class="case-section" aria-labelledby="products-title">
+        <div class="section-heading">
+          <p class="section-number">03 / Featured products</p>
+          <h2 id="products-title">Four perspectives on a changing economic landscape.</h2>
         </div>
 
-        <div class="portfolio-description">
-          <h2>Macro Economics Analytics Application</h2>
-          <p>
-            This project provide cohesive macro analytics, helping users navigate the complex macroeconomic landscape. 
-            Analysis from advanced statistical techniques are used to identify and interpret key trends from the multitude of available data.
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="case-image">
+              <img src="assets/img/portfolio/p2_2.png" alt="Federal Reserve E-Monitor view with topic filters and a time-series visualization of communication signals.">
+            </div>
+            <div class="product-card-content">
+              <p class="eyebrow">Communication signals</p>
+              <h3>Central Bank e-Monitor</h3>
+              <p>Visual analytics for central bank press conferences, combining textual, vocal, and visual communication signals to help users examine policy messaging.</p>
+            </div>
+          </article>
 
-            Analytics provide Global Banks Monitor, Recession, Hawk/Dove Index, Inflation Index, Unemployment Index, among many others.
-          </p>
+          <article class="product-card">
+            <div class="horizon-visual" aria-label="Unemployment risk outlook horizons: 6, 12, and 24 months">
+              <span>6 months</span>
+              <span>12 months</span>
+              <span>24 months</span>
+            </div>
+            <div class="product-card-content">
+              <p class="eyebrow">Forward-looking indicator</p>
+              <h3>Unemployment Risk Index</h3>
+              <p>Visualizes unemployment risk across six-, twelve-, and twenty-four-month horizons to support monitoring of labor-market conditions.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="case-image">
+              <img src="assets/img/portfolio/p2_3.png" alt="Historical central bank statement and question-and-answer sentiment scores with trend lines over time.">
+            </div>
+            <div class="product-card-content">
+              <p class="eyebrow">Monetary policy sentiment</p>
+              <h3>Hawk/Dove Sentiment Index</h3>
+              <p>Uses natural language processing to communicate central bank monetary-policy sentiment and changes in tone over time.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="case-image">
+              <img src="assets/img/portfolio/p2_1.png" alt="Inflation Risk Index chart comparing six-, twelve-, and twenty-four-month risk estimates over time.">
+            </div>
+            <div class="product-card-content">
+              <p class="eyebrow">Machine-learning assessment</p>
+              <h3>Inflation Risk Index</h3>
+              <p>Visualizes machine-learning-based inflation risk assessments across multiple time horizons, making changes in projected risk easier to follow.</p>
+            </div>
+          </article>
         </div>
+      </section>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+      <section class="outcome-band" aria-labelledby="outcome-title">
+        <p class="eyebrow">Outcome</p>
+        <h2 id="outcome-title">A clearer view of complex economic conditions.</h2>
+        <p>The work delivered a collection of visual analytics products that make macroeconomic information more accessible and interpretable—supporting ongoing monitoring and more informed decisions.</p>
+      </section>
 
+      <footer class="case-footer">
+        <span>Visual Analytics · Advance Macro Research</span>
+        <a href="index.html#portfolio">Explore more projects <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+      </footer>
+    </div>
   </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
